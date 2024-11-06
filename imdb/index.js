@@ -131,4 +131,22 @@ function updateMovieButtons() {
   });
 }
 
+
+document.addEventListener('DOMContentLoaded', () => {
+  const loginButton = document.getElementById('login-button');
+  const logoutButton = document.getElementById('logout-button');
+
+  if (localStorage.getItem('loggedIn') === 'true') {
+    loginButton.style.display = 'none';
+    logoutButton.style.display = 'block';
+  }
+
+  // Logout functionality
+  logoutButton.addEventListener('click', () => {
+    localStorage.removeItem('loggedIn');
+    window.location.href = 'imdb.html';
+  });
+});
+
+
 searchMovies();

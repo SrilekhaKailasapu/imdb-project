@@ -1,70 +1,67 @@
 
-function showLogin() {
-    document.getElementById('loginForm').style.display = 'block';
-    document.getElementById('signupForm').style.display = 'none';
-    document.getElementById('successMessage').style.display = 'none';
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const loginForm = document.getElementById('login-form');
+  const signupForm = document.getElementById('signup-form');
+  const messageDiv = document.getElementById('message');
 
-function showSignup() {
-    document.getElementById('signupForm').style.display = 'block';
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('successMessage').style.display = 'none';
-}
+  function showSignUp() {
+    loginForm.style.display = 'none';
+    signupForm.style.display = 'block';
+    messageDiv.textContent = '';
+    document.getElementById('page-title').textContent = 'Sign Up';
+  }
 
+  function signUp() {
+    const username = document.getElementById('signup-username').value;
+    const password = document.getElementById('signup-password').value;
 
-function handleLogin() {
-    const username = document.getElementById('loginUsername').value;
-    const password = document.getElementById('loginPassword').value;
+    if (username && password) {
+      localStorage.setItem('username', username);
+      localStorage.setItem('password', password);
+      messageDiv.textContent = 'Sign-Up Successful! Redirecting to Login...';
+      messageDiv.style.color = 'green';
 
-   
-    if (username  && password ) {
-        showSuccess('Login successful!');
+      setTimeout(() => {
+        signupForm.reset();
+        loginForm.style.display = 'block';
+        signupForm.style.display = 'none';
+        document.getElementById('page-title').textContent = 'Login';
+        messageDiv.textContent = '';
+      }, 2000);
     } else {
-        alert('Invalid credentials! Try again.');
+      messageDiv.textContent = 'Please enter both a username and password';
+      messageDiv.style.color = 'red';
     }
-}
+  }
+  function showLogin() {
+    signupForm.style.display = 'none';
+    loginForm.style.display = 'block';
+    messageDiv.textContent = '';
+    document.getElementById('page-title').textContent = 'Login';
+  }
 
-function handleSignup() {
-    const username = document.getElementById('signupUsername').value;
-    const email = document.getElementById('signupEmail').value;
-    const tel = document.getElementById('signupMobile').value;
-    const password = document.getElementById('signupPassword').value;
-    const pass = document.getElementById('signupConfirmPassword').value;
-    const gender = document.getElementById('genderMale').value;
-    const gend = document.getElementById('genderFemale').value;
+  function login() {
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
 
-    if (password == pass){
-        console.log("passwords are matched")
-    }
-    else{
-        console.log("passwords are not matched")
-    }
-    
-    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
-    if (!email.match(emailPattern)) {
-        document.getElementById('emailError').style.display = 'block';
-        isValid = false;
+    if (username === storedUsername && password === storedPassword) {
+      messageDiv.textContent = 'Login Successful! Redirecting...';
+      messageDiv.style.color = 'green';
+      setTimeout(() => {
+        localStorage.setItem('loggedIn', 'true');
+        window.location.href = 'imdb.html';
+      }, 2000);
     } else {
-        document.getElementById('emailError').style.display = 'block';
+      messageDiv.textContent = 'Invalid credentials! Please sign up first.';
+      messageDiv.style.color = 'red';
     }
+  }
 
-    if (username && email && password) {
-        showSuccess('Signup successful!');
-    } else {
-        alert('Please fill in all fields.');
-    }
-}
-
-function showSuccess(message) {
-    document.getElementById('loginForm').style.display = 'none';
-    document.getElementById('signupForm').style.display = 'none';
-    document.getElementById('successMessage').style.display = 'block';
-    document.getElementById('message').textContent = message;
-}
-function handleBack() {
-    window.location.href = 'imdb.html';
-    
-}
-
-showLogin();
+  window.showSignUp = showSignUp;
+  window.showLogin = showLogin;
+  window.signUp = signUp;
+  window.login = login;
+});
 

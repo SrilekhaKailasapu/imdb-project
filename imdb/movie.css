@@ -49,3 +49,18 @@
   .white{
     color: white;
   }
+
+  @media (max-width: 480px) {
+    .movie-box {
+        width: 95vw;
+    }
+
+    .movie-poster {
+        width: 90vw;
+        padding: 5px;
+    }
+
+    .movie-details {
+        width: 90vw;
+    }
+}

@@ -83,7 +83,12 @@ body {
     border-radius: 5px;
     
   }
-
+  #logout-button{
+    padding: 6px;
+    background-color: rgb(253, 35, 35);
+    cursor: pointer;
+    border-radius: 5px;
+  }
   
   
   .movie {
