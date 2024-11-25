@@ -124,6 +124,10 @@ body {
 #signup{
   margin-right: 150px;
 } 
+#logout-button{
+  margin-right: 150px;
+} 
+}
 
 @media (max-width: 768px) {
   #search-bar {
