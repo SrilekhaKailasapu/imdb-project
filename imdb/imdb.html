@@ -24,7 +24,8 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-
+    
+  
 
 </head>
 
@@ -39,40 +40,43 @@
           </span>
         </a>
 
-        
-        <div id="search-bar" class="mx-auto">
-          <form action="" autocomplete="off">
-            <input
-              type="search"
-              placeholder="Search a movie..."
-              id="searchInput"
-              autocomplete="off"
-            />
+     
+          <div class="d-flex ms-auto">
+            <div id="show-login"><i class="fa-solid fa-bars"></i></div>
+  
+            <a href="login.html" id="login-button">
+            <button id="signup" class="login">Login</button></a>
+            <button id="logout-button" style="display: none;">Logout</button>
 
-            <button id="search-btn">
-              <i class="fa-solid fa-magnifying-glass search-icon"></i>
-            </button>
+            <a href="search.html"><button id="signup">Search</button></a>
 
-          </form>
-        </div>
-        
+            <div id="show-favourites"><i class="fa-solid fa-bars"></i></div>
 
-        <div id="show-login"><i class="fa-solid fa-bars"></i></div>
-        
-        <a href="login.html" id="login-button">
-          <button id="signup">Login</button></a>
-        <button id="logout-button" style="display: none;">Logout</button>
-
-        <div id="show-favourites"><i class="fa-solid fa-bars"></i></div>
-
-        <a href="favorites.html">
-          <button id="showFavoritesButton">Show My Favorites</button>
-        </a>
-
-        
+            <a href="favorites.html">
+            <button id="showFavoritesButton">Show My Favorites</button>
+            </a>
+          </div>
+       
 
       </div>
-    </nav>
+  </nav>
+
+
+    <div class="home-container active">
+      <div class="slogon-container">
+          <div class="slogon-p">
+              <span>Your ultimate source for movies, TV shows, and celebrities.</span>
+          </div>
+          <div class="slogon-head">
+              <span>Enjoy IMDb Searching</span>
+          </div>
+          <div class="slogon-p1">
+              IMDb is the world's most popular and authoritative source for movie, TV, and celebrity content. We offer a comprehensive database of information on films, TV shows, and the people who make them. Our site features reviews, ratings, trailers, and interviews with industry insiders, as well as news and updates on upcoming releases. Whether you're a casual movie-goer or a die-hard cinephile, IMDb has everything you need to stay informed and entertained. With over 200 million unique visitors per month, IMDb is the go-to destination for anyone looking to explore the world of entertainment.
+          </div>
+         <a href="search.html"> <button class="home-search-button">Let's Search!</button></a>
+      </div>
+  </div>
+
 
   </header> 
 
@@ -84,6 +88,7 @@
 
 
   <script src="index.js"></script>
+  
 
 </body>
 </html>

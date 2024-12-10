@@ -3,16 +3,29 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     overflow-x: hidden;
+    background-color: #030202;
   }
-  
+ 
+  .searchbar{
+    background-color: #2a2929;
+  }
   #search-bar {
     height: 40px;
     width: 50vw;
+   
   }
-  
+  .search-slogon {
+    width: 1200px;
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    color: #f5d879;
+    transition: all 0.5s ease-in-out;
+}
+ 
   form {
     width: inherit;
-    background-color: rgb(109, 114, 121);
+    background-color: rgb(63, 81, 81);
     border-radius: 50px;
     height: 45px;
     display: flex;
@@ -121,17 +134,79 @@ body {
       color: white;
       font-size: 1.2rem;
     }
-#signup{
-  margin-right: 150px;
+ 
+
+.home-container {
+  width: 100vw;
+  height: 70vh;
+  color: rgb(18, 78, 188);
+  background-color: #030202;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.home-container.active {
+  display: flex;
+}
+
+.slogon-container {
+  width: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.slogon-p {
+  font-size: 1.2rem;
+  color: #f8e39c;
 } 
-#logout-button{
-  margin-right: 150px;
-} 
+
+.slogon-head {
+  font-size: 4.5rem;
+  color: #e6b91f;
+}
+
+.slogon-p1 {
+  font-size: 1rem;
+  color: #f8e39c;
+  margin-top: 20px;
+}
+
+.home-search-button {
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: none;
+  background-color: #e6b91f;
+  color: #181818;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 50px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px #030202;
+  transition: all 0.5s ease-in-out; 
+}
+
+.home-search-button:hover {
+  background-color: rgb(243, 213, 113);
+  color: #181818;
+}
+.search-slogon{
+  padding-left: 150px;
+  padding-top: 50px;
+
 }
 
 @media (max-width: 768px) {
   #search-bar {
     width: 90vw;
+    padding-left: 100px;
   }
 
   form {
@@ -145,7 +220,7 @@ body {
   }
 
   #search-btn {
-    width: 4rem;
+    width: 5rem;
     font-size: 18px;
   }
 
@@ -173,5 +248,33 @@ body {
     width: 100%;
     text-align: center;
     margin-top: 10px;
+  }
+  .slogon-p {
+    font-size: 0.6rem;
+  }
+
+  .slogon-head {
+    font-size: 2rem;
+  }
+
+  .slogon-container {
+    width: 350px;
+  }
+
+  .slogon-p1 {
+    font-size: 0.6rem;
+  }
+
+  .home-search-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+
+  .search-slogon {
+  display: flex;
+  width: 500px;
+  font-size: 0.9rem;
+  text-align: center;
   }
 }

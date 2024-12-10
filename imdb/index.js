@@ -131,6 +131,29 @@ function updateMovieButtons() {
   });
 }
 
+// navabar
+
+var modal = document.getElementById('searchModal');
+var btn = document.getElementById('searchButton');
+var span = document.getElementsByClassName('close')[0];
+
+// Open the modal
+btn.addEventListener('click', function() {
+  modal.style.display = 'block';
+});
+
+// Close the modal when the user clicks the 'x'
+span.addEventListener('click', function() {
+  modal.style.display = 'none';
+});
+
+// Close the modal if the user clicks outside of the modal content
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none';
+  }
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const loginButton = document.getElementById('login-button');
