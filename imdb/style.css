@@ -272,7 +272,9 @@ body {
   }
 
   .search-slogon {
-    width: 350px;
+    width: auto;
+    padding-left: 10px;
+    /* width: 250px; */
     font-size: 0.9rem;
 }
 }
